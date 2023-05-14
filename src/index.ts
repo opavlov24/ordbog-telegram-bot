@@ -4,10 +4,7 @@ import { handleIncomingUpdate } from './model/bot.js';
 
 const logger = new Logger();
 
-export const handler = async (
-  event: APIGatewayEvent,
-  context: Context
-): Promise<APIGatewayProxyResult> => {
+export const handler = async (event: APIGatewayEvent, context: Context): Promise<APIGatewayProxyResult> => {
   const token = event.headers['x-telegram-bot-api-secret-token'];
 
   if (event.body && token) {
